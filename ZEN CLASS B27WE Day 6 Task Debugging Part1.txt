@@ -1,0 +1,440 @@
+ZEN class Batch B27WE Day 6 Tasks:
+
+Debugging JS: Part 1
+
+----------------------------------------------------------------------------------------
+1. 
+Find the culprit
+
+HTML:
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      alert( “I’m JavaScript!’);
+    </script>
+    Whats the error in this ?
+  </body>
+</html>
+
+Ans: 
+Double quotes used inside the alet function is the culprit. by changing it to 
+alert("I’m JavaScript!"); we can run the html file.
+----------------------------------------------------------------------------------------
+2. 
+Find the culprit and invoke the alert
+
+HTML:
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+.JS:
+alert(“I’m invoked!”);
+
+ANS:
+double quotation isd is the invalid character inside the alert fuction, by changing it to
+alert("I'm invoked!"); the script file is working
+-------------------------------------------------------------------------------------------
+3. 
+Explain the below how it works
+
+JS:
+alert("I'm JavaScript!");
+alert('Hello') // this line is not having semicolon
+alert(`Wor
+ ld`)
+alert(3 +
+1
++ 2); // this is multiple line code and its working
+
+ANS:
+Explanation: 
+> displays: I'm javascript
+> displays: Hello                 //semicolon is optional
+> displays: Wor
+            ld                   //template literal: `  ---   ` can be used for multi line
+                                   string inside console or alert.
+> displays: 6                     //multi line calculations in alert, console is working
+--------------------------------------------------------------------------------------------
+4. 
+Fix the below to alert Guvi geek
+
+JS:
+let admin=9, fname=10.5; 
+fname = "Guvi";
+lname = "geek"
+admin = fname+lname;
+alert( admin ); // "Guvi geek"
+
+ANS:
+let admin = 9,
+  fname = 10.5;
+fname = "Guvi";
+lname = "geek";
+admin = fname + ` ` + lname;                 //adding space by using template literal
+alert(admin); // "Guvi geek"
+--------------------------------------------------------------------------------------------
+5.
+Fix the below to alert hello Guvi geek
+
+JS:
+let fname=10.5; 
+fname = "Guvi";
+lname = "geek"
+let name = fname+lname;
+alert( 'hello ${name}' );
+
+ANS:
+let fname = 10.5;
+fname = "Guvi";
+lname = "geek";
+let name1 = fname + ` ` + lname;
+alert(`hello ${name1}`);                 //wrong symbol of quotes was used for templete literal
+--------------------------------------------------------------------------------------------
+6. 
+Fix the below to alert sum of two numbers
+
+JS:
+let a = prompt("First number?");
+let b = prompt("Second number?");
+alert(a + b);
+
+ANS:
+let a = prompt("First number?");
+a = +a;                                 //converting string input to number
+let b = prompt("Second number?");
+b = +b;
+alert(a + b);                           //adding two numbers
+--------------------------------------------------------------------------------------------
+7.
+If you run the below scritpt you will get “Code is Blasted”
+Explain Why the Code is blasted and how to diffuse it and get “Diffused”.
+
+JS:
+var a = "2" > "12";
+//Don't touch below this
+if (a) {
+  console.log("Code is Blasted")
+}
+else
+{
+  console.log("Diffused") 
+}
+
+ANS:
+var a = 2 > 12;                               //comparing as numbers not strings
+//Don't touch below this
+if (a) {
+  console.log("Code is Blasted");
+} else {
+  console.log("Diffused");
+}
+--------------------------------------------------------------------------------------------
+8.
+How to get the success in console.
+
+JS:
+let a = prompt("Enter a number?");
+//Don't modify any code below this
+if (a) {
+ console.log( 'OMG it works for any number inc 0' );
+}
+else
+{
+ console.log( "Success" );
+}
+
+ans:
+let a = prompt("Enter a number?");            //success can be achieved by not giving
+//Don't modify any code below this            //any input in the alert pop up
+if (a) {
+  console.log("OMG it works for any number inc 0");
+} else {
+  console.log("Success");
+}
+--------------------------------------------------------------------------------------------
+9.
+How to get the correct score in console.
+
+js:
+let value = prompt('How many runs you scored in this ball');
+if (value === 4) {
+      console.log("You hit a Four");
+} else if (value === 6) {
+      console.log("You hit a Six");
+} else {
+      console.log("I couldn't figure out");
+}
+
+ans:
+let value = prompt("How many runs you scored in this ball");
+value = +value;
+if (value === 4) {
+  console.log("You hit a Four");                    //converting input string into
+} else if (value === 6) {                           //number for comparision
+  console.log("You hit a Six");
+} else {
+  console.log("I couldn't figure out");
+}
+--------------------------------------------------------------------------------------------
+10. 
+Fix the code to welcome the Employee
+
+js:
+let login = 'Employee';
+let message = (login == 'Employee') ? :
+  (login == 'Director') ? 'Greetings' :
+  (login == '') ? 'No login' :
+  '';
+console.log(message);
+
+ans:
+let login = "Employer";
+let message =
+  login == "Employee"
+    ? console.log("greetings employee")      //after ? expression was missing
+    : login == "Director"
+    ? console.log("Greetings")
+    : login == ""
+    ? "No login"
+    : "none of above";
+console.log(message);
+--------------------------------------------------------------------------------------------
+11.
+Fix the code to welcome the boss
+
+js:
+// You cant change the value of the msg
+let message;
+if (null || 2 || undefined )
+{
+ let message = "welcome boss";
+}
+else
+{
+ let message = "Go away";
+}
+  console.log(message);
+
+ans:
+// You cant change the value of the msg
+let message;
+if (null || 2 || undefined) {
+  message = "welcome boss";           //let variable should not be declared multiple times
+} else {
+  message = "Go away";
+}
+console.log(message);               
+--------------------------------------------------------------------------------------------
+12.
+Fix the code to welcome the boss
+
+js:
+let message;
+let lock = 2;
+//Dont change any code below this 
+if (null || lock || undefined )
+{
+  message = "Go away";
+}
+else
+{
+ message = "welcome";
+}
+  console.log(message);
+
+ans:
+let message;
+let lock;
+//Dont change any code below this
+if (null || lock || undefined) {   //making value of lock as null
+  message = "Go away";
+} else {
+  message = "welcome";
+}
+console.log(message);
+--------------------------------------------------------------------------------------------
+13.
+Fix the code to welcome the boss
+
+js:
+let message;
+let lock = 2;
+//Dont change any code below this
+if (lock && " " || undefined )
+{
+  message = "Go away";
+}
+else
+{
+ message = "welcome";
+}
+console.log(message);
+
+ans:
+let message;
+let lock;
+//Dont change any code below this
+if ((lock && " ") || undefined) {        //changing value of lock
+  message = "Go away";
+} else {
+  message = "welcome";
+}
+console.log(message);
+--------------------------------------------------------------------------------------------
+14.
+Change the code to print
+3
+2
+1
+
+js:
+//You can change only 2 characters
+let i = 3;
+while (i) {
+  console.log( --i );
+}
+
+ans:
+//You can change only 2 characters
+let i = 3;
+while (i) {
+  console.log(i--);                       //i-- will print and then decrements values
+}
+--------------------------------------------------------------------------------------------
+15.
+Change the code to print 1 to 10 in 4 lines
+
+js:
+let num = 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+
+ans:
+let num = 1;
+let num = 1;
+console.log(`${num} ${(num += 1)} ${(num += 1)}
+${(num += 1)} ${(num += 1)} ${(num += 1)}
+${(num += 1)} ${(num += 1)} ${(num += 1)}
+${(num += 1)}`);                          //multi line incrementing values and printing 
+                                          //using template literals
+--------------------------------------------------------------------------------------------
+16.
+Change the code to print even numbers
+
+js:
+//You are allowed to modify only one character 
+for (let num = 2; num <= 20; num += 1) {
+  console.log(num)
+}
+
+ans:
+//You are allowed to modify only one character
+for (let num = 2; num <= 20; num += 2) {        //incrementing with step of 2
+  console.log(num);
+}
+-------------------------------------------------------------------------------------------
+17.
+Change the code to print all the gifts
+
+js:
+let gifts = ["teddy bear", "drone", "doll"];
+for (let i = 0; i < 3; i++) {
+  console.log('Wrapped ${'gifts[i]'} and added a bow!');
+}
+
+ans:
+let gifts = ["teddy bear", "drone", "doll"];
+for (let i = 0; i < 3; i++) {
+  console.log(`Wrapped ${gifts[i]} and added a bow!`);
+}                              //using template literal instead of single quote
+--------------------------------------------------------------------------------------------
+18.
+Fix the code to disarm the bomb.
+
+js:
+let countdown = 100;
+while (countdown > 0) {
+  countdown--;
+  if(countdown == 0)
+  {
+   console.log("bomb triggered");
+  }
+}
+
+ans:
+let countdown = 100;
+while (countdown > 1) {
+  countdown--;
+  if (countdown == 0) {
+    console.log("bomb triggered");
+  }
+}                      ///changing while consition so that 0 is never reached
+--------------------------------------------------------------------------------------------
+19.
+Whats the msg printed and why?
+
+js:
+var lemein = “0”;
+var lemeout = 0;
+var msg = “”;
+if (lemein) {
+ msg += “hi”;
+ }
+if (lemeout) {
+ msg += ‘Hello’;
+}
+console.log(msg);
+
+ans:
+var lemein = "0";
+var lemeout = 0;
+var msg = "";
+if (lemein) {
+  msg += "hi";           //lemein contains string 0 which is truthy value
+}
+if (lemeout) {
+  msg += "hello";        //lemeout contains 0 which is falsy value 
+}
+console.log(msg);
+--------------------------------------------------------------------------------------------
+20.
+Whats the msg printed and why? Guess you answer before running it.
+
+js:
+var lemein = “0”;
+var lemeout = 0;
+var msg = “”;
+if (lemein) {
+ msg += “hi”;
+ }
+if (lemeout) {
+ msg += ‘Hello’;
+}
+console.log(msg);
+
+ans:
+hi
+--------------------------------------------------------------------------------------------
+
