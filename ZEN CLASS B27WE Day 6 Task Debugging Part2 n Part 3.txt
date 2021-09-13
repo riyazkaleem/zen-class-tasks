@@ -1,0 +1,748 @@
+ZEN class Batch B27WE Day 6 Tasks:
+
+Debugging JS: Part 2, Part 3
+
+----------------------------------------------------------------------------------------
+Part 2
+----------------------------------------------------------------------------------------
+1. 
+Write a code to print the numbers in the array
+
+js:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var new_string = “”;
+ 
+for (var i = 1; i < 11; i--) {
+ new_string += numsArr[i] 
+}
+console.log(new_string);
+
+ans:
+var numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var new_string = "";
+
+for (var i = 0; i < 11; i++) {
+  new_string += numsArr[i];
+}
+console.log(new_string);           //for loop incrementing i++
+-------------------------------------------------------------------------------------------
+2. 
+Write a code to print the numbers in the array
+
+js:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var new_string = “”;
+ 
+for (var i = 1; i < 11; i++) {
+ new_string += numsArr[i] + , 
+}
+console.log(new_string);
+
+ans:
+var numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var new_string = "";
+
+for (var i = 0; i < 11; i++) {
+  if (i == numsArr.length - 1) {
+    new_string += numsArr[numsArr.length - 1]; //seperate condition for last value
+  } else {
+    new_string += `${numsArr[i]}, `;           //using template literal
+  }
+}
+console.log(new_string);
+--------------------------------------------------------------------------------------------
+3. 
+Write a code to print from last to first with spaces (Make sure there is no space after the
+last element 1)
+
+js:
+var new_string = “”;
+ 
+for (var i = 11; i > 0; i — ) {
+ new_string += numsArr[i] + “ “ 
+}
+console.log(new_string);
+
+ans:
+var new_string = "";
+var numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+
+for (var i = numsArr.length - 1; i >= 0; i--) {  //changing the for loop to dynamic
+  new_string += numsArr[i] + " ";
+}
+new_string = new_string.trim();        //removing space in the end
+console.log(new_string);              
+--------------------------------------------------------------------------------------------
+4.
+Write a code to replace the array value — If the number is even, replace it with ‘even’.
+
+js:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+for (var i = 0; i <=10; i++) {
+ if(numsArr[i] %2 == 0 )
+ {
+ numsArr[i] = odd
+ }
+}
+console.log(numsArr);
+
+ans:
+var numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+for (var i = 0; i <= 10; i++) {
+  if (numsArr[i] % 2 == 0) {
+    numsArr[i] = "even";            //using the string even
+  }
+}
+console.log(numsArr);
+--------------------------------------------------------------------------------------------
+5.
+Write a code to replace the array value — If the index is even, replace it with ‘even’.
+
+js:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+for (var i = 0; i <=10; i++) {
+ if(numsArr[i] %2 == 0 )
+ {
+ numsArr[i] = even
+ }
+}
+console.log(numsArr);
+
+ans:
+var numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+for (var i = 0; i <= 10; i++) {
+  if (i % 2 == 0) {                   //changing if condition
+    numsArr[i] = "even";
+  }
+}
+console.log(numsArr);
+--------------------------------------------------------------------------------------------
+6. 
+Write a code to add all the numbers in the array
+
+js:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+for (var i = 0; i <=10; i++) {
+ var sum;
+ sum += numsArr[i]
+}
+console.log(sum);
+
+ans:
+var numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum = 0;                                    //declaring sum outside for loop
+for (var i = 0; i <= numsArr.length - 1; i++) {
+  sum += numsArr[i];
+}
+console.log(sum);
+-------------------------------------------------------------------------------------------
+7.
+Write a code to add the even numbers only
+
+js:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum=0;
+for (var i = 0; i <10; i++) {
+ if(numsArr[i]%2==0);
+ sum += numsArr[i]
+}
+console.log(sum);
+
+ans:
+var numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum = 0;
+for (var i = 0; i <= 10; i++) {
+  if (numsArr[i] % 2 == 0) {            //semicolon must be removed beside if
+    console.log(numsArr[i] % 2);
+    sum += numsArr[i];
+  }
+}
+console.log(sum);
+--------------------------------------------------------------------------------------------
+8. 
+Write a code to add the even numbers and subract the odd numbers
+
+js:
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum=100;
+for (var i = 0; i <=10; i++) {
+ if(numsArr[i]%2!=0);
+ {
+ sum += numsArr[i]
+ }
+ else
+ {
+ sum -= numsArr[i]
+ }
+}
+console.log(sum);
+
+ans:
+var numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum = 100;
+for (var i = 0; i <= 10; i++) {
+  if (numsArr[i] % 2 == 0) {      //if condition changed and semi colon removed
+    sum += numsArr[i];
+  } else {
+    sum -= numsArr[i];
+  }
+}
+console.log(sum);
+--------------------------------------------------------------------------------------------
+9.
+Write a code to print inner arrays
+
+js:
+var numsArr = [[1, 2, 3, 4, 5][ 6, 7, 8, 9, 10, 11]];
+for (var i = 0; i < numsArr.length; i++); {
+ console.log( numsArr[i])
+}
+
+ans:
+var numsArr = [
+  [1, 2, 3, 4, 5],
+  [6, 7, 8, 9, 10, 11],                   //adding , in input 
+];
+for (var i = 0; i <= numsArr.length; i++) {          //changing for loop syntax
+  console.log(numsArr[i]);
+}
+--------------------------------------------------------------------------------------------
+10.
+Write a code to print elements in the inner arrays
+
+js:
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+var str_all=0;
+for (var i = 0; i < numsArr.length; i++) {
+ var inner_array = numsArr[i];
+ for(var j = 0 ; j < inner_array.length;i++ )
+     str_all +=inner_array[j]
+}
+console.log(str_all);
+
+ans:
+var numsArr = [
+  [1, 2, 3, 4, 5],
+  [6, 7, 8, 9, 10, 11],
+];
+var str_all = "";
+for (var i = 0; i < numsArr.length; i++) {
+  var inner_array = numsArr[i];
+  for (var j = 0; j < inner_array.length; j++) {  //for loop increment changed
+    str_all += inner_array[j];
+  }
+}
+console.log(str_all);
+--------------------------------------------------------------------------------------------
+11.
+Write a code to replace the array value — If the index is even, replace it with ‘even’.
+
+js:
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+var str_all=0;
+for (var i = 0; i < numsArr.length; i++) {
+ var inner_array = numsArr[i];
+ for(var j = 0 ; j < inner_array.length;i++ )
+      if(numsArr[i] %2 == 0 )
+      {
+         numsArr[i] = even
+       }
+}
+console.log(numsArr);
+
+ans:
+var numsArr = [
+  [1, 2, 3, 4, 5],
+  [6, 7, 8, 9, 10, 11],
+];
+// var str_all = 0;
+for (var i = 0; i < numsArr.length; i++) {
+  var inner_array = numsArr[i];
+  for (var j = 0; j < inner_array.length; j++) {
+    if ((i + j) % 2 == 0) {             //given required output
+      inner_array[j] = "even";
+    }
+  }
+}
+console.log(numsArr);
+
+oup:
+[ [“even”, 2, “even”, 4, “even”], [6, “even”, 8, “even”, 10] ]
+--------------------------------------------------------------------------------------------
+12.
+Write a code to print elements in the inner arrays in reverse
+
+js:
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+var str_all=0;
+for (var i = 0; i < numsArr.length; i++) {
+ var inner_array = numsArr[i];
+ for(var j = inner_array.length; j < 0 ;j-- )
+     str_all +=inner_array[j]
+}
+console.log(str_all);
+
+ans:
+var numsArr = [
+  [1, 2, 3, 4, 5],
+  [6, 7, 8, 9, 10, 11],
+];
+var str_all = "";
+for (var i = numsArr.length - 1; i >= 0; i--) {
+  var inner_array = numsArr[i];
+  for (var j = inner_array.length - 1; j >= 0; j--) {
+    str_all += inner_array[j] + " ";
+  }
+}
+console.log(str_all);
+
+oup:
+11 10 9 8 7 6 5 4 3 2 1
+--------------------------------------------------------------------------------------------
+13.
+Write a code to add elements in the inner arrays based on odd or even values
+
+js:
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+var sum_odd=0;
+var sum_even=0;
+for (var i = 0; i < numsArr.length; i++) {
+ var inner_array = numsArr[i];
+ for(var j = 0 ; j < inner_array.length;j++ ){
+ if(numsArr[i]%2!=0)
+ {
+ sum_odd += numsArr[i]
+ }
+ else
+ {
+ sum_even += numsArr[i]
+ }
+}
+}
+console.log(sum_odd);
+console.log(sum_even);
+
+ans:
+var numsArr = [
+  [1, 2, 3, 4, 5],
+  [6, 7, 8, 9, 10, 11],
+];
+var sum_odd = 0;
+var sum_even = 0;
+for (var i = 0; i < numsArr.length; i++) {
+  var inner_array = numsArr[i];
+  for (var j = 0; j < inner_array.length; j++) {
+    if (inner_array[j] % 2 != 0) {
+      sum_odd += inner_array[j]; //using if condition of even adding respective elements
+    } else {
+      sum_even += inner_array[j];
+    }
+  }
+}
+console.log(sum_odd);
+console.log(sum_even);
+
+oup:
+36
+30
+
+--------------------------------------------------------------------------------------------
+Part 3
+--------------------------------------------------------------------------------------------
+
+1.
+Fix the code to get the largest of three.
+
+js:
+aa = (f,s,t) => {
+ let f,s,t;
+ console.log(f,s,t);
+ if(f>s &&f>t){
+ console.log(f)}
+ else if(s>f && s>t){
+ console.log(s)}
+ else{
+ console.log(t)}
+}
+aa(1,2,3);
+
+ans:
+let f, s, t;                       //declare f, s, t outside
+aa = (f, s, t) => {
+  console.log(f, s, t);
+  if (f > s && f > t) {
+    console.log(f);
+  } else if (s > f && s > t) {
+    console.log(s);
+  } else {
+    console.log(t);
+  }
+};
+aa(1, 2, 3);
+--------------------------------------------------------------------------------------------
+2. 
+Fix the code to Sum of the digits present in the number
+
+js:
+let n = 123;
+console.log(add(n));
+function add(n)
+{
+let sum = 10;
+for(var i=0;i<n.length;i++){
+ sum+=n[i]
+ }
+ return sum;
+}
+
+ans:
+let n = 123;
+n = "" + n;                                    //converting 123 into '123'
+n = n.split("");                               //creating an array ['1','2', '3']
+for (let i = 0; i < n.length; i++) {
+  n[i] = +n[i];                                //parsing each element of array into integer
+}
+console.log(add(n));
+function add(n) {
+  let sum = 0;
+  for (var i = 0; i < n.length; i++) {
+    sum += n[i];                               //adding all digits
+  }
+  return sum;
+}
+--------------------------------------------------------------------------------------------
+3. 
+Fix the code to Sum of all numbers using IIFE function
+
+js:
+const arr = [9,8,5,6,4,3,2,1];
+(function() {
+ let sum = 0;
+ for (var i = 0; i <= arr.length; i++);{
+ sum += arr[i];
+ }
+ console.log(sum);
+ return sum;
+})();
+
+
+ans:
+const arr = [9, 8, 5, 6, 4, 3, 2, 1];
+(function (arr1) {
+  let sum = 0;
+  for (var i = 0; i < arr1.length; i++) {    ///value of the limit is changed
+    sum += arr1[i];
+  }
+  console.log(sum);
+  // return sum;
+})([9, 8, 5, 6, 4, 3, 2, 1]);
+--------------------------------------------------------------------------------------------
+4.
+Fix the code to gen Title caps.
+
+js:
+var arr = [“guvi”, “geek”, “zen”, “fullstack”];
+var ano = function(arro) {
+ for (var i = 0; i <= arro.length; i++) {
+ console.log(arro[i][0].toUpperCase() + arro[i].substr(1));
+ }
+}
+ano();
+
+ans:
+var arr = ["guvi", "geek", "zen", "fullstack"];
+var ano = function (arro) {
+  for (var i = 0; i < arro.length; i++) {             //final limit of for loop changed
+    console.log(arro[i][0].toUpperCase() + arro[i].substr(1));
+  }
+};
+ano(arr);            //input given to function
+-------------------------------------------------------------------------------------------
+5.
+Fix the code to return the Prime numbers
+
+js:
+const newArray=[1,3,2,5,10];
+const myPrime=newArray.filter(num=>{
+ for(let i=2;i<=num;i++){
+ if(num%i===0)
+ {
+ return true;
+ }
+ }
+ return num===1;
+});
+console.log(myPrime);
+
+ans:
+const newArray = [1, 3, 2, 5, 10];
+const myPrime = newArray.filter((num) => {
+  console.log(num);
+  for (let i = 2; i < num; i++) {
+    if (num % i != 0) {
+      return true;                               //filter returns true if condition met
+    } else {
+      return false;                              //returns false if not
+    }
+  }
+  return num === 2;
+});
+console.log(myPrime);
+--------------------------------------------------------------------------------------------
+6.
+Fix the code to sum the number in that array
+
+js:
+const num = [10, 20, 30, 40,50,60,70,80,90,100] 
+const sum = (a, b) =>
+ a + b
+const sum = num.reduce(sum)
+console.log(sum);
+
+ans:
+const num = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+let sum = (a, b) => a + b;
+let sum1 = num.reduce(sum);
+console.log(sum1);
+--------------------------------------------------------------------------------------------
+7.
+Fix the code to rotate an array by k times and return rotated array using IIFE function
+
+js:
+var arr = [1, 2, 3, 6, 8, 6, 1, 9, 10, 12, 13];
+var k = 3;
+k = arr.length % k;
+(function() {
+ arr = {};
+ out = arr.slice(k + 1, arr.length);
+ var count = out.length;
+ for (var i = 0; i < k + 1; i++) {
+ out[count] = arr[i];
+ count += 1;
+ }
+ console.log(out);})();
+
+ans:
+var arr = [1, 2, 3, 6, 8, 6, 1, 9, 10, 12, 13];
+var k = 3;
+k = arr.length % k;
+(function (arr) {
+  arr1 = {};
+  out = arr.slice(k + 1, arr.length);
+  var count = out.length;
+  for (var i = 0; i < k + 1; i++) {
+    out[count] = arr[i];
+    count += 1;
+  }
+  console.log(out);
+})([1, 2, 3, 6, 8, 6, 1, 9, 10, 12, 13]);
+--------------------------------------------------------------------------------------------
+8.
+Fix the code to gen Title caps.
+
+js:
+var arr = [“guvi”, “geek”, “zen”, “fullstack”];
+(function() {
+ for (var i = 0; i <= arr.length; i++) {
+ console.log(arr[0][i].toUpperCase() + arr[i].substr(1));
+ }
+})();
+
+ans:
+var arr = ["guvi", "geek", "zen", "fullstack"];
+(function () {
+  for (var i = 0; i < arr.length; i++) {
+    console.log(arr[i][0].toUpperCase() + arr[i].substr(1));
+  }
+})();                                           //accessing the first character of elements
+--------------------------------------------------------------------------------------------
+9.
+print all odd numbers in an array using IIFE function
+
+js:
+var arr = [1, 2, 3, 5, 7, 79, 7, 2, 6, 9, 4];
+(function() {
+ for (var i = 0; i < arr.length; i++) {
+ if (arr[i] % 2 === 0) {
+ console.log(arr[i]);
+ }}
+})();
+
+ans;
+var arr = [1, 2, 3, 5, 7, 79, 7, 2, 6, 9, 4];
+(function () {
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 !== 0) {                   //using if condition for oddd numbers
+      console.log(arr[i]);
+    }
+  }
+})();
+-------------------------------------------------------------------------------------------
+10.
+Fix the code to reverse.
+
+js:
+(function(str){
+ str1 = str.split(“ “).reverse().join(“”);
+ console.log(str1); 
+})(“abcd”)
+
+ans:
+(function (str) {
+  str1 = str.split("").reverse().join("");  //inside split space shouldnot be given
+  console.log(str1);
+})("abcd");
+--------------------------------------------------------------------------------------------
+11.
+Fix the code to remove duplicates.
+
+js:
+var res = function(arr){
+ for(var i=0; i < arr.length; i++){
+ newArr = [];
+ if(newArr.indexOf(arr[i]) == -1) {
+ newArr.push(arr[i]);
+ } }
+ console.log(newArr)
+}
+
+ans:
+var arr = [1, 2, 3, 5, 7, 79, 7, 2, 6, 9, 4];
+var res = (function () {
+  newArr = [];                               //initializing newArr outside for loop
+  for (var i = 0; i < arr.length; i++) {
+    if (newArr.indexOf(arr[i]) == -1) {
+      newArr.push(arr[i]);
+    }
+  }
+  console.log(newArr);
+})();
+--------------------------------------------------------------------------------------------
+12.
+Fix the code to give the below output:
+
+oup:
+[
+{firstName: “Vasanth”, lastName: “Raja”, age: 24, role: “JSWizard”},
+{firstName: “Sri”, lastName: “Devi”, age: 28, role: “Coder”}
+]
+
+js:
+var array =[[[“firstname”,”vasanth”],[“lastname”,”Raje”],[“age”,24],[“role”,”JSWizard”]],[[“firstname”,”Sri”],[“lastname”,”Devi”],[“age”,28],[“role”, “Coder”]]];
+var final=[]
+while(array.length!=0)
+{
+ var outer_remove = array.shift();
+ 
+ while(outer_remove.length!=0)
+ {
+ var inner_remove = outer_remove.shift()
+ var key = inner_remove[0]
+ var value =inner_remove[1]
+ new_object[key]=value
+ }
+ final.push(new_object)
+}
+
+ans:
+var array = [
+  [
+    ["firstname", "vasanth"],
+    ["lastname", "Raje"],
+    ["age", 24],
+    ["role", "JSWizard"],
+  ],
+  [
+    ["firstname", "Sri"],
+    ["lastname", "Devi"],
+    ["age", 28],
+    ["role", "Coder"],
+  ],
+];
+var final = [];
+let new_object = {};
+while (array.length != 0) {
+  let new_object = {};                              //create a new object inside first
+  var outer_remove = array.shift();                   while loop
+  while (outer_remove.length != 0) {
+    var inner_remove = outer_remove.shift();
+    var key = inner_remove[0];
+    var value = inner_remove[1];
+    new_object[key] = value;
+  }
+  final = final.concat(new_object);
+}
+console.log(final);
+--------------------------------------------------------------------------------------------
+13.
+Sum of odd numbers in an array
+
+js:
+var as=[12,34,5,6,2,56,6,2,1];
+var s=as.reduce(function(a,c){
+ if(c%2!=0)
+ {
+ return a+c;
+ }
+ return a;});
+console.log(s);
+
+ans:
+var as = [12, 34, 5, 6, 2, 56, 6, 2, 1];
+var s = as.reduce(function (a, c) {
+  if (c % 2 != 0) {
+    return a + c;
+  }
+  return a;
+});
+if (as[0] % 2 == 0) {                  //checking for first number of array, if even
+  s -= as[0];                          //removing from final sum
+}
+console.log(s);
+--------------------------------------------------------------------------------------------
+14.
+Swap the odd and even digits
+
+js:
+aa = data=>{
+ var a=data;
+for(i=0;i<a.length-1;i++){
+ var l=’’;
+ var s=a[i+1]
+ var b=a[i]
+ l+=s
+ l+=b
+ i=i+1
+}
+if((a.length%2)!=0){
+ l+=a[a.length-1]
+}
+console.log(l);
+}
+
+ans:
+let data = 1234;                                      //giving number input 1234
+aa = (data) => {
+  var a = data;
+
+  a = "" + a;                                         //converting into string- '1234'
+  a = a.split("");
+  for (let i = 0; i < a.length; i++) {
+    a[i] = +a[i];
+  }
+  console.log(a);
+  var l = "";                                         //declaring new string to which 
+  for (i = 0; i <= a.length - 1; i++) {                 all values appended after swapping
+    var s = a[i + 1];
+    var b = a[i];
+    l += s;
+    l += b;
+    i = i + 1;
+  }
+  if (a.length % 2 != 0) {
+    l += a[a.length - 1];
+  }
+  console.log(l);
+};
+aa(data);
+--------------------------------------------------------------------------------------------
