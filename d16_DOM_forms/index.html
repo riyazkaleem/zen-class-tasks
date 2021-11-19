@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation with forms</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 id="title">DOM Manipulation with forms</h1>
+    <p id="description">
+      To implement a form, after entering the values they are to be populated
+      into a table.
+    </p>
+    <form id="form" action="">
+      <fieldset class="fieldset">
+        <div class="maindiv">
+        <div class="form-group">
+            <label for="firstname">First name</label>
+            <input
+              id="first-name"
+              type="text"
+              name="firstname"
+              placeholder="please enter your first name"
+              required
+            />
+            <br /><br />
+
+            <label for="lastname">Last name</label>
+            <input
+              id="last-name"
+              type="text"
+              name="lastname"
+              placeholder="please enter your last name"
+              required
+            />
+            <br /><br />
+
+            <label for="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="please enter your email id"
+              required
+            />
+            <br /><br />
+
+            <label for="pincode">Pincode</label>
+            <input
+              type="text"
+              id="pincode"
+              placeholder="please enter your pincode"
+              required
+            />
+            <br /><br />
+
+            <label for="gender">Gender</label>
+            <br /><br />
+            <input
+              type="radio"
+              id="gender"
+              name="gender"
+              value="male"
+              required
+            /><label for="male">Male</label><br />
+            <input type="radio" id="gender" name="gender" value="male"required /><label
+              for="female"
+              >Female</label
+            >
+            <br /><br />
+
+            <label for="food">Select any 2 food items you like</label>
+            <select name="food" id="food" multiple>
+  <option value="idli">Idli</option>
+  <option value="vada">Vada</option>
+  <option value="Dosa">Dosa</option>
+  <option value="puri">Puri</option>
+  <option value="uttappam">uttappam</option>
+</select>
+            <br /><br />
+
+            <label for="state">State</label>
+            <input
+              id="state"
+              type="text"
+              name="state"
+              placeholder="please enter your state"
+              required
+            />
+            <br /><br />
+
+            <label for="country">country</label>
+            <input
+              id="country"
+              type="text"
+              name="country"
+              placeholder="please enter your country"
+              required
+            />
+            <br /><br />
+
+            <label for="address">Address</label><br />
+            <textarea
+              name="address"
+              id="address"
+              cols="30"
+              rows="10"
+              placeholder="please enter your address"
+            ></textarea>
+            <br /><br />
+
+            <input  type="button"id="submit" class="btn btn-primary" onclick="addnewRow()" value="submit my inputs"/>
+              
+            <br /><br />
+          </div>
+
+          <div class="div2">
+            <table class="table" id="table">
+              <thead>
+                <tr>
+                  <th>First name</th>
+                  <th>Last name</th>
+                  <th>Email</th>
+                  <th>Pincode</th>
+                  <th>Gender</th>
+                  <th>Food</th>
+                  <th>State</th>
+                  <th>Country</th>
+                  <th>Address</th>
+                  
+                </tr>
+                <br />
+              </thead>
+              <tbody id="tbody">
+                <tr>
+                   
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+  <!-- testcase and script files -->
+  <script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
+  <script src="script.js"></script>
+</html>
