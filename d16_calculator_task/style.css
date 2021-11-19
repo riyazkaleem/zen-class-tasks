@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: lightblue;
+}
+
+#calcbox {
+  width: 250px;
+  height: 290px;
+  border: 2px solid rgb(153, 151, 151);
+  background-color: lightgrey;
+}
+
+#row1,
+#row2,
+#row3,
+#row4,
+#row5 {
+  display: flex;
+  gap: 40px;
+  margin: 15px;
+  padding: 5px;
+}
+#result {
+  margin-top: 20px;
+  margin-left: 10px;
+  padding-top: 10px;
+  width: 220px;
+  background-color: rgb(192, 189, 189);
+  border: 2px solid rgb(153, 151, 151);
+}
+button {
+  border: 0;
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+#clear {
+  color: red;
+}
+
+#dot,
+#multiply,
+#divide,
+#subtract,
+#add {
+  color: blue;
+}
+
+#equal {
+  background-color: blue;
+  width: 100px;
+  padding: 5px;
+  color: white;
+}
