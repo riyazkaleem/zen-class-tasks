@@ -1,0 +1,12 @@
+body {
+  background-color: lightgreen;
+}
+
+p {
+  background-color: lightblue;
+  margin: 10px;
+}
+
+button {
+  margin: 10px;
+}
