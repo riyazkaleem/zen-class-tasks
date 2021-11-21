@@ -1,0 +1,14 @@
+body {
+  background-color: bisque;
+}
+
+p,
+img {
+  margin-left: 20px;
+}
+
+.buttone {
+  padding: 10px;
+  margin-left: 40px;
+  margin-top: 10px;
+}
